@@ -1,2 +1,2 @@
-# Fit-Connect-management-system
-gym management system
+# Fit-Connect
+ Personalized Online Gym Selection Platform
