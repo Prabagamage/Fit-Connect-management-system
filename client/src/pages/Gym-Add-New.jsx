@@ -104,36 +104,36 @@ export default function GymAddNew() {
               onClick={() => navigate('/review-add')}>Reviews</p>
           </div>
         </div>
-        <div className="max-w-2xl mx-auto bg-gradient-to-b from-gray-400 to-gray-50 p-6 rounded-xl shadow-md mt-10">
-          <h2 className="text-xl font-bold text-gray-600 mb-4">GYM Details</h2>
-          <div className="space-y-3 flex flex-col">
+        <div className="max-w-5xl mx-auto bg-gradient-to-b from-gray-400 to-gray-50 p-10 rounded-xl shadow-md mt-12 min-h-screen">
+          <h2 className="text-3xl font-bold text-gray-600 mb-8">GYM Details</h2>
+          <div className="space-y-6 flex flex-col">
             <label htmlFor="gymName" className="flex justify-between">
               Gym Name
-              <span className="text-xs text-gray-500 font-semibold mt-1">(Only letters/ numbers allowed)</span>
+              
             </label>
             <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="gymName" value={formData.gymName} />
             
             <label htmlFor="location" className="flex justify-between">
               Location
-              <span className="text-xs text-gray-500 font-semibold mt-1">Required</span>
+             
             </label>
             <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="location" value={formData.location} />
             
             <label htmlFor="phone" className="flex justify-between">
               Phone Number
-              <span className="text-xs text-gray-500 font-semibold mt-1">(Valid phone number format)</span>
+              
             </label>
             <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="phone" value={formData.phone} />
             
             <label htmlFor="email" className="flex justify-between">
               Email
-              <span className="text-xs text-gray-500 font-semibold mt-1">(Must follow email format)</span>
+              
             </label>
             <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="email" value={formData.email} />
             
             <label htmlFor="fees" className="flex justify-between">
               Membership Fees
-              <span className="text-xs text-gray-500 font-semibold mt-1">Required</span>
+             
             </label>
             <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="fees" value={formData.fees} />
           </div>
@@ -148,7 +148,7 @@ export default function GymAddNew() {
             ))}
           </div>
 
-          <h3 className="mt-4 font-medium">Upload Photos (Max 3)</h3>
+          <h3 className="mt-4 font-medium">Upload Photos </h3>
           <div className="mt-2 border p-4 rounded-lg flex flex-col items-center">
             <input type="file" accept="image/*" multiple onChange={handleFileChange} className="mb-2" />
             <div className="flex space-x-2">

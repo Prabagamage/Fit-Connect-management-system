@@ -42,7 +42,7 @@ const MyFaq = () => {
             <TopNav />
 
             <div className="max-w-4xl mx-auto p-6">
-                <button className="bg-gray-500 text-white px-6 py-3 rounded-2xl mt-6 w-full md:w-auto text-center font-semibold">My Questions</button>
+                <button className="bg-gray-100 text-2xl font-bold text-black px-6 py-3  mt-6 w-full md:w-auto text-center font-semibold">My Questions</button>
 
                 <img src={myQimage} alt="Submitted Questions" className="mt-10 w-full rounded-lg shadow-md" />
 
@@ -53,7 +53,7 @@ const MyFaq = () => {
                         myq.map((item, index) => (
                             <div key={index} className="flex flex-col md:flex-row bg-gray-200 justify-between py-3 items-center my-4 rounded-lg p-4 shadow-md">
                                 <h3 className="text-lg font-semibold text-left w-full md:w-auto">Q: {item.title}</h3>
-                                <button onClick={() => navigate(`/faq/${item._id}`)} className="bg-gray-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-600 transition-all">View</button>
+                                <button onClick={() => navigate(`/faq/${item._id}`)} className="bg-green-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-600 transition-all">View</button>
                             </div>
                         ))
                     ) : (
@@ -62,7 +62,7 @@ const MyFaq = () => {
                 </div>
 
                 <div className="flex justify-center mt-10">
-                    <button className="bg-gray-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-gray-600 transition-all" onClick={() => navigate("/commonfaq")}>Back</button>
+                    <button className="bg-red-500 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-gray-600 transition-all" onClick={() => navigate("/commonfaq")}>Back</button>
                 </div>
             </div>
         </div>

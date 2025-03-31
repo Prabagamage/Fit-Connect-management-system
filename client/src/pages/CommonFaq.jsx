@@ -155,7 +155,7 @@ const CommonFaq = () => {
                 <div className="flex justify-between items-center mb-8">
                     <h1 className="text-3xl font-bold text-gray-800">Frequently Asked Questions</h1>
                     <button 
-                        className="flex items-center gap-2 bg-gray-200 hover:bg-gray-300 transition-colors px-4 py-2 rounded-lg shadow-sm" 
+                        className="flex items-center gap-2 bg-gray-500 hover:bg-gray-300 transition-colors px-4 py-2 rounded-lg shadow-sm" 
                         onClick={generatePDF}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -223,7 +223,7 @@ const CommonFaq = () => {
 
                 <div className="flex gap-4 mt-8">
                     <button 
-                        className="flex items-center gap-2 bg-gray-200 hover:bg-gray-300 transition-colors px-5 py-3 rounded-lg font-medium shadow-sm" 
+                        className="flex items-center gap-2 bg-blue-400 hover:bg-blue-200 transition-colors px-5 py-3 rounded-lg font-medium shadow-sm" 
                         onClick={() => navigate("/myfaq")}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -232,7 +232,7 @@ const CommonFaq = () => {
                         My Questions
                     </button>
                     <button 
-                        className="flex items-center gap-2 bg-gray-200 hover:bg-gray-300 transition-colors px-5 py-3 rounded-lg font-medium shadow-sm" 
+                        className="flex items-center gap-2 bg-green-400 hover:bg-green-200 transition-colors px-5 py-3 rounded-lg font-medium shadow-sm" 
                         onClick={() => navigate("/askfaq")}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

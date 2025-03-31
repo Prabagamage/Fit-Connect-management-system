@@ -103,13 +103,13 @@ const GymList = () => {
                     <td className="py-3 px-6 text-center">{renderStars(gym.ratings)}</td>
                     <td className="py-3 px-6 text-center">
                       <div className="flex justify-center space-x-3">
-                        <button onClick={() => navigate(`/gym-view/${gym._id}`)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => navigate(`/gym-view/${gym._id}`)} className="text-blue-500 hover:text-gray-700 cursor-pointer">
                           <FaEye size={20} />
                         </button>
-                        <button onClick={() => navigate(`/gym-update/${gym._id}`)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => navigate(`/gym-update/${gym._id}`)} className="text-black-200 hover:text-gray-700 cursor-pointer">
                           <FaPen size={20} />
                         </button>
-                        <button onClick={() => handleDelete(gym._id)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => handleDelete(gym._id)} className="text-red-500 hover:text-gray-700 cursor-pointer">
                           <FaTrash size={20} />
                         </button>
                       </div>
@@ -125,7 +125,7 @@ const GymList = () => {
           </table>
         </div>
         <div className="flex flex-col items-center mt-4 space-y-2">
-          <button onClick={() => navigate('/gym-add-new')} className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Add New Gym</button>
+          <button onClick={() => navigate('/gym-add-new')} className="bg-green-500 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Add New Gym</button>
           <button onClick={generatePDF} className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Generate Gym List Report</button>
         </div>
       </div>

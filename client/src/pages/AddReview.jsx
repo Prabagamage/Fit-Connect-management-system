@@ -122,7 +122,7 @@ const AddReview = () => {
           <div className="w-full bg-gray-300 p-10">
             <p className="text-3xl font-bold">Reviews</p>
           </div>
-          <div className="w-full bg-gray-400 p-10 space-y-4 flex-1">
+          <div className="w-full bg-gray-400 p-10 space-y-4 flex-1 ">
             <p
               className="text-2xl font-bold p-4 bg-gray-200 hover:bg-gray-300 cursor-pointer"
               onClick={() => navigate('/gym-list')}
@@ -137,34 +137,38 @@ const AddReview = () => {
             </p>
           </div>
         </div>
-        <div className="container mx-auto p-4 flex-1">
-          <h2 className="text-2xl font-bold mb-4">Review List</h2>
-          <div className="flex flex-col gap-4">
+              <div className="container max-w-4xl mx-auto p-4 flex-1">
+              <h2 className="text-3xl font-bold mb-4 text-center">Review List</h2>
+              <div className="flex flex-col gap-4">
+
+
             {gyms.map((gym) => (
               <div key={gym._id} className="border-b py-4">
                 <div className="flex justify-between items-center">
                   <h3 className="text-xl font-semibold">{gym.name}</h3>
                   <div className="flex space-x-2">
-                    <button
-                      className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
-                      onClick={() => {
-                        setSelectedGymId(gym._id); // Set the selected gym's ID
-                        setShowDialog(true);
-                      }}
-                    >
-                      Add Review
-                    </button>
-                    <button
-                      className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+                  <button
+                    className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                    onClick={() => {
+                      setSelectedGymId(gym._id); // Set the selected gym's ID
+                      setShowDialog(true);
+                    }}
+                  >
+                    Add Review
+                  </button>
+
+                      <button
+                      className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
                       onClick={() => fetchReviews(gym._id)} // Show reviews when clicked
-                    >
-                      View Reviews
-                    </button>
+                          >
+                       View Reviews
+                      </button>
+
                   </div>
                 </div>
                 {showDialog && selectedGymId === gym._id && (
-                  <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+                  <div className="fixed inset-0 bg-gray-300 bg-opacity-50 flex items-center justify-center">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-200 ">
                       <h3 className="text-xl font-bold mb-4">
                         {isUpdating ? "Update Your Review" : "Write Your Review"}
                       </h3>
@@ -225,8 +229,8 @@ const AddReview = () => {
 
           {/* Show reviews section */}
           {viewReviewsDialog && (
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center">
-              <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <div className="fixed inset-0 bg-gray-300 bg-opacity-50 flex items-center justify-center">
+              <div className="bg-white p-6 rounded-lg shadow-lg w-150">
                 <h3 className="text-xl font-bold mb-4">Reviews</h3>
                 <button
                   className="mt-4 bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400"
