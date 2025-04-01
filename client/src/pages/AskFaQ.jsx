@@ -84,8 +84,8 @@ const AskFaQ = () => {
 
     return (
         <div>
-            <button className='bg-gray-200 px-4 py-3 rounded-2xl mt-10 ml-10'>Ask a Question</button>
-            <p className='text-lg font-semibold mt-10 ml-10'>Enter your questions, and our team will answer you shortly.</p>
+            <button className='text-lg bg-white font-bold px-4 py-3  mt-10 ml-10'>Ask a Question</button>
+            <p className='text-lg font-bold mt-10 ml-10'>Enter your questions, and our team will answer you shortly.</p>
             
             <div className='bg-gray-500 flex flex-col p-5'>
                 <div className="relative mb-2">
@@ -144,13 +144,13 @@ const AskFaQ = () => {
             
             <div className='flex items-center justify-center gap-5'>
                 <button 
-                    className='bg-gray-200 px-4 py-3 rounded-2xl mt-10 ml-10 hover:bg-gray-300'
+                    className='bg-green-500 px-4 py-3 rounded-2xl mt-10 ml-10 hover:bg-gray-300'
                     onClick={handleSubmit}
                 >
                     Submit
                 </button>
                 <button 
-                    className='bg-gray-200 px-4 py-3 rounded-2xl mt-10 ml-10 hover:bg-gray-300'
+                    className='bg-red-500 px-4 py-3 rounded-2xl mt-10 ml-10 hover:bg-gray-300'
                     onClick={() => navigate("/commonfaq")}
                 >
                     Cancel

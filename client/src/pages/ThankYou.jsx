@@ -8,7 +8,7 @@ const ThankYou = () => {
         <div>
             <TopNav />
 
-            <button className='bg-gray-200 px-4 py-3 rounded-2xl mt-10 ml-10'>Add Question</button>
+            <button className='bg-white px-4 py-3  mt-10 ml-10'>Added Question</button>
 
             <div style={{ backgroundImage: `url(${imageB})` }} className='bg-cover min-h-[80vh] p-10 w-full mt-10'>
                 <div className='text-center w-3/4 md:w-1/2 mx-auto p-10 bg-white'>

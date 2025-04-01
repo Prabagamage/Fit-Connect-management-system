@@ -11,7 +11,7 @@ const Faq = () => {
             <TopNav />
             
             <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10">
-                <button className="bg-gray-500 text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-gray-600 transition duration-300">
+                <button className="bg-white-100 text-black text-2xl font-bold px-6 py-3  ">
                     FAQ Page
                 </button>
                 
