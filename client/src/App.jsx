@@ -28,6 +28,8 @@ import SuccessPage from './pages/common/SuccessPage'
 import AddReview from './pages/AddReview'
 import Register from './pages/Register'
 import Login from './pages/Login'
+import AnswerFaq from './pages/AnswerFaq'
+import AdminReview from './pages/AdminReview'
 
 
 
@@ -39,9 +41,7 @@ function App() {
         <Routes>
 
           <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Overview />} />
           <Route path="/community" element={<Community />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/commonfaq" element={<CommonFaq />} />
@@ -49,13 +49,14 @@ function App() {
           <Route path="/myfaq" element={<MyFaq />} />
           <Route path="/thank" element={<ThankYou />} />
           <Route path="/faq/:id" element={<SingleFaq />} />
+          <Route path='/answer/:id' element={<AnswerFaq />} />
 
 
           <Route path="/gym-list" element={<GymList />} />
           <Route path="/gym-add-new" element={<GymAddNew />} />
           <Route path="/gym-view/:id" element={<GymView />} />
           <Route path="/gym-update/:id" element={<GymUpdate />} />
-          
+
           <Route path="/review-add" element={<AddReview />} />
 
 
@@ -69,6 +70,9 @@ function App() {
 
 
           <Route path="/success-page" element={<SuccessPage />} />
+
+          {/* Admin routes */}
+          <Route path="/dashboard" element={<AdminReview />} />
 
         </Routes>
       </BrowserRouter>

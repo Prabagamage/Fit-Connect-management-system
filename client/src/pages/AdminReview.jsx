@@ -5,9 +5,8 @@ import { FaStar } from "react-icons/fa";
 import TopNav from '../components/TopNav';
 import toast from "react-simple-toasts";
 import { useAuth } from "../context/AuthContext";
-import Footer from "../components/Footer";
 
-const AddReview = () => {
+const AdminReview = () => {
   const { gymId } = useParams(); // to get gym id from the URL if needed
   const [gyms, setGyms] = useState([]);
   const [userName, setUserName] = useState("");
@@ -22,7 +21,6 @@ const AddReview = () => {
   const [reviewToUpdate, setReviewToUpdate] = useState(null); // Store the review to be updated
   const navigate = useNavigate(); // Initialize navigate
   const context = useAuth()
-  console.log(context.user)
 
   useEffect(() => {
     const fetchGyms = async () => {
@@ -137,7 +135,7 @@ const AddReview = () => {
             </p>
             <p
               className="text-2xl font-bold p-4 bg-gray-200 hover:bg-gray-300 cursor-pointer"
-              onClick={() => navigate(context.user.role === 'admin' ? '/dashboard' : '/review-add')}
+              onClick={() => navigate( context.user.role === 'admin' ? '/dashboard' : '/review-add')}
             >
               Reviews
             </p>
@@ -151,7 +149,7 @@ const AddReview = () => {
                 <div className="flex justify-between items-center">
                   <h3 className="text-xl font-semibold">{gym.name}</h3>
                   <div className="flex space-x-2">
-                    <button
+                    {/* <button
                       className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
                       onClick={() => {
                         setSelectedGymId(gym._id); // Set the selected gym's ID
@@ -159,7 +157,7 @@ const AddReview = () => {
                       }}
                     >
                       Add Review
-                    </button>
+                    </button> */}
                     <button
                       className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
                       onClick={() => fetchReviews(gym._id)} // Show reviews when clicked
@@ -169,7 +167,7 @@ const AddReview = () => {
                   </div>
                 </div>
                 {showDialog && (
-                  <div className="fixed inset-0 bg-gray-500/50 bg-opacity-50 flex items-center justify-center">
+                  <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-96">
                       <h3 className="text-xl font-bold mb-4">
                         {isUpdating ? "Update Your Review" : "Write Your Review"}
@@ -231,7 +229,7 @@ const AddReview = () => {
 
           {/* Show reviews section */}
           {viewReviewsDialog && (
-            <div className="fixed inset-0 bg-gray-500/50 bg-opacity-50 flex items-center justify-center">
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center">
               <div className="bg-white p-6 rounded-lg shadow-lg w-96">
                 <h3 className="text-xl font-bold mb-4">Reviews</h3>
                 <button
@@ -247,6 +245,7 @@ const AddReview = () => {
                         <div className="flex justify-between items-center">
                           <span className="font-semibold">{review.user}</span>
                           <div className="flex space-x-1">{renderStars(review.rating)}</div>
+                          <span className="text-gray-500">{review.userId}</span>
                         </div>
                         <p className="mt-2">{review.comment}</p>
                         <div className="flex justify-between mt-2">
@@ -274,9 +273,8 @@ const AddReview = () => {
           )}
         </div>
       </div>
-      <Footer/>
     </>
   );
 };
 
-export default AddReview;
+export default AdminReview;

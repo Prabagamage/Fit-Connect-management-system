@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 
 
 export const loginUser = async (req, res) => {
-    try{
+    try {
         const { email, password } = req.body;
         const user = await UserModel.findOne({ email: email });
         if (!user) return ERROR_RESPONSE(res, 404, "User not found!");
@@ -15,23 +15,25 @@ export const loginUser = async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || "secret", { expiresIn: "1d" });
 
         return SUCCESS_RESPONSE(res, 200, { user, token, message: "Login successful!" });
-    }catch(err){
+    } catch (err) {
         return ERROR_RESPONSE(res, 500, err.message);
     }
 }
 
 export const registerUser = async (req, res) => {
-    try{
-        const { name, email, password } = req.body;
+    try {
+        const { name, email, password, role } = req.body;
         const isExist = await UserModel.findOne({ email: email });
+
+        if (role !== "user" && role !== "admin" && role !== "trainer") return ERROR_RESPONSE(res, 400, "Invalid role!");
         if (isExist) return ERROR_RESPONSE(res, 400, "User already exists!");
-        const user = new UserModel({ name, email, password });
+        const user = new UserModel({ name, email, password, role });
         await user.save();
         return SUCCESS_RESPONSE(res, 201, {
             message: "User registered successfully!",
             user
         });
-    }catch(err){
+    } catch (err) {
         return ERROR_RESPONSE(res, 500, err.message);
     }
 }

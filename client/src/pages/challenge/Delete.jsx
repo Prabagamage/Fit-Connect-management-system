@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AuthAxios from '../../utils/AuthAxios';
 import { useNavigate, useParams } from 'react-router-dom';
+import toast from 'react-simple-toasts';
 
 export default function DeleteChallenge() {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function DeleteChallenge() {
             })
             .catch(error => {
                 console.error("Error deleting challenge:", error);
-                alert("Failed to delete challenge.");
+                toast("Failed to delete challenge.");
             });
     };
 

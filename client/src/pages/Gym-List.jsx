@@ -5,6 +5,7 @@ import TopNav from '../components/TopNav';
 import AuthAxios from '../utils/AuthAxios';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import Footer from '../components/Footer';
 
 const GymList = () => {
   const [gyms, setGyms] = useState([]);
@@ -130,6 +131,7 @@ const GymList = () => {
         </div>
       </div>
       </div>
+      <Footer/>
     </>
   );
 };
