@@ -12,4 +12,11 @@ export const authMiddleware = (req, res, next) => {
     } else {
         return ERROR_RESPONSE(res, 401, "Unauthorized");
     }
+    
+}
+export const isAcceptedRole = (role) => {
+    return (req, res, next) => {
+        if (req.user.role !== role) return ERROR_RESPONSE(res, 401, "Unauthorized");
+        next();
+    }
 }
