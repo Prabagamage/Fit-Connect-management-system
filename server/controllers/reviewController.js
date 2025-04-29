@@ -1,11 +1,20 @@
 import Review from "../models/Review.js";
 import Gym from "../models/Gym.js";
+import UserModel from "../models/User.js";
 
 // Add Review
 export const addReview = async (req, res) => {
   try {
-    const { user, rating, comment, gymId } = req.body;
-    const review = new Review({ user, rating, comment, gym: gymId });
+    const { rating, comment, gymId } = req.body;
+
+    if (!req.user || !req.user.id) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+    const userDoc = await UserModel.findById(req.user.id);
+    if (!userDoc) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const review = new Review({ userId: req.user.id, user: userDoc.name, rating, comment, gym: gymId });
     await review.save();
 
     // Update Gym Rating
@@ -56,6 +65,7 @@ export const deleteReview = async (req, res) => {
 export const updateReview = async (req, res) => {
   try {
     const { rating, comment } = req.body;
+    console.log(req.body)
     const { id } = req.params;
 
     // Find the review by ID
@@ -71,18 +81,19 @@ export const updateReview = async (req, res) => {
 
     // Update Gym Rating (Recalculate the average rating)
     const gym = await Gym.findById(review.gym);
-    const updatedRating = gym.reviews.length > 1
+    const updatedRating = gym?.reviews?.length > 1
       ? gym.reviews.reduce((acc, reviewId) => {
-          const review = gym.reviews.find((r) => r._id.toString() === reviewId.toString());
-          return acc + review.rating;
-        }, 0) / gym.reviews.length
+        const review = gym.reviews.find((r) => r._id.toString() === reviewId.toString());
+        return acc + review.rating;
+      }, 0) / gym?.reviews?.length || 0
       : rating;
-
+      console.log(updatedRating)
     gym.ratings = updatedRating;
     await gym.save();
 
     res.status(200).json(review);
   } catch (error) {
+    console.error("Error updating review:", error);
     res.status(500).json({ message: error.message });
   }
 };

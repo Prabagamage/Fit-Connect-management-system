@@ -9,7 +9,13 @@ export const createGym = async (req, res) => {
     const fileNames = Object.values(req.files).flat().map(file => file.filename);
     console.log(services)
     const jsonServices = JSON.parse(services);
-    const gym = new Gym({ name, location, services: jsonServices, fees, phone, email, images: fileNames.map(file => `/uploads/${file}`) });
+
+    const isExist = await Gym.findOne({ name });
+
+    if (isExist) {
+      return res.status(400).json({ message: "Gym name already exists!" });
+    }
+    const gym = new Gym({ name, location, services: jsonServices, fees, phone, email, images: fileNames.map(file => `/uploads/${file}`), createdBy: req?.user?.id });
     await gym.save();
     res.status(201).json(gym);
   } catch (error) {
@@ -34,6 +40,15 @@ export const getGyms = async (req, res) => {
   }
 };
 
+export const getMyGyms = async (req, res) => {
+  try {
+    const gyms = await Gym.find({ createdBy: req?.user?.id }).populate("reviews");
+    res.status(200).json(gyms);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // Get Gym by ID
 export const getGymById = async (req, res) => {
   try {
@@ -50,7 +65,7 @@ export const updateGym = async (req, res) => {
   try {
     const { location, services, fees, phone, email } = req.body;
     const name = req.body.gymName;
-    
+
     // Parse services if it's a string
     const jsonServices = typeof services === 'string' ? JSON.parse(services) : services;
 
@@ -61,14 +76,14 @@ export const updateGym = async (req, res) => {
     }
 
     const updateData = {
-      name, 
-      location, 
-      services: jsonServices, 
-      fees, 
-      phone, 
+      name,
+      location,
+      services: jsonServices,
+      fees,
+      phone,
       email
     };
-    
+
     // Only add images field if new images were uploaded
     if (imageUrls.length > 0) {
       updateData.images = imageUrls;
