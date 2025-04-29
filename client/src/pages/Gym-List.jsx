@@ -71,20 +71,25 @@ const GymList = () => {
                     onClick={() => navigate('/review-add')}>Reviews</p>
                 </div>
             </div>
-      <div className="container mx-auto p-4">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold">Gym List</h2>
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search gyms..."
-              className="pl-4 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <FaSearch className="absolute right-3 top-3 text-black" />
-          </div>
-        </div>
+            <div className="container mx-auto p-4">
+  {/* Centered Heading */}
+  <div className="mb-4 text-center">
+    <h3 className="text-4xl font-bold">Gym List</h3>
+  </div>
+
+  {/* Right-Aligned Search Bar */}
+  <div className="flex justify-end mb-4">
+    <div className="relative w-full max-w-xs">
+      <input
+        type="text"
+        placeholder="Search gyms..."
+        className="w-full pl-4 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <FaSearch className="absolute right-3 top-3 text-black" />
+    </div>
+  </div>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
             <thead className="bg-gray-400 text-black">
@@ -104,13 +109,13 @@ const GymList = () => {
                     <td className="py-3 px-6 text-center">{renderStars(gym.ratings)}</td>
                     <td className="py-3 px-6 text-center">
                       <div className="flex justify-center space-x-3">
-                        <button onClick={() => navigate(`/gym-view/${gym._id}`)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => navigate(`/gym-view/${gym._id}`)} className="text-blue-800 hover:text-gray-700 cursor-pointer">
                           <FaEye size={20} />
                         </button>
-                        <button onClick={() => navigate(`/gym-update/${gym._id}`)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => navigate(`/gym-update/${gym._id}`)} className="text-black-400 hover:text-gray-700 cursor-pointer">
                           <FaPen size={20} />
                         </button>
-                        <button onClick={() => handleDelete(gym._id)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => handleDelete(gym._id)} className="text-red-700 hover:text-gray-700 cursor-pointer">
                           <FaTrash size={20} />
                         </button>
                       </div>
@@ -126,8 +131,8 @@ const GymList = () => {
           </table>
         </div>
         <div className="flex flex-col items-center mt-4 space-y-2">
-          <button onClick={() => navigate('/gym-add-new')} className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Add New Gym</button>
-          <button onClick={generatePDF} className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Generate Gym List Report</button>
+          <button onClick={() => navigate('/gym-add-new')} className="bg-green-600 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Add New Gym</button>
+          <button onClick={generatePDF} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Generate Gym List Report</button>
         </div>
       </div>
       </div>
