@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AuthAxios from '../utils/AuthAxios';
 import { useNavigate } from 'react-router-dom';
 import TopNav from '../components/TopNav';
+import Footer from '../components/Footer';
 
 export default function Challenges() {
     const [challenges, setChallenges] = useState([]);
@@ -38,14 +39,14 @@ export default function Challenges() {
     return (
         <>
         <TopNav/>
-        <div className='flex flex-row w-full h-screen'>
+        <div className='flex lg:flex-row flex-col w-full h-screen'>
             {/* Left Sidebar (Fixed) */}
-            <div className='flex flex-col w-1/5 h-full'>
+            <div className='flex flex-row lg:flex-col w-full lg:w-1/5 lg:h-full'>
                 <div className='w-full bg-gray-300 p-10'>
                     <p className='text-2xl font-bold'>Challenge Listing</p>
                 </div>
-                <div className='w-full bg-gray-500 p-10 space-y-4 flex-1'>
-                    <p className='text-2xl font-bold p-4 bg-white'>Gym List</p>
+                <div className='w-full flex lg:flex-col flex-row bg-gray-500 p-10 space-y-4 flex-1'>
+                    <p className='text-2xl font-bold p-4 bg-white cursor-pointer' onClick={() => navigate('/gym-list')}>Gym List</p>
                     <p 
                         className='text-2xl font-bold p-4 bg-white cursor-pointer'
                         onClick={() => navigate('/create-challenge')}
@@ -64,7 +65,7 @@ export default function Challenges() {
                     >
                         Challenge Category
                     </p>
-                    <p className='text-2xl font-bold p-4 bg-white'>Reviews</p>
+                    <p onClick={() => navigate('/review-add')} className='text-2xl cursor-pointer font-bold p-4 bg-white'>Reviews</p>
                 </div>
             </div>
 
@@ -84,7 +85,7 @@ export default function Challenges() {
                 </div>
 
                 {/* Scrollable Challenge List */}
-                <div className='grid grid-cols-2 gap-5 p-10 h-full overflow-scroll'>
+                <div className='grid md:grid-cols-1 xl:grid-cols-2 gap-5 p-10 h-full overflow-scroll'>
                     {filteredChallenges.map((challenge, index) => (
                         <div
                             key={index}
@@ -106,6 +107,7 @@ export default function Challenges() {
                 </div>
             </div>
         </div>
+        <Footer/>
         </>
     );
 }

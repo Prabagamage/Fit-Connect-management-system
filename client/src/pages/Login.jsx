@@ -3,11 +3,14 @@ import AuthAxios from "../utils/AuthAxios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-simple-toasts";
 import TopNav from "../components/TopNav";
+import { useAuth } from "../context/AuthContext";
+import Footer from "../components/Footer";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const context = useAuth()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,8 +21,14 @@ const Login = () => {
       });
 
       localStorage.setItem("auth_token", resp.data.data.token);
+      context.setUser(resp.data.data.user)
       toast("Login successful!");
-      navigate("/challenges");
+      const user = resp.data.data?.user
+      if (user.role === "admin") navigate("/dashboard")
+      if (user.role === "trainer") navigate("/trainer")
+      if (user.role === "user") navigate("/challenges")
+      console.log('Logged usr', user);
+      // navigate("/challenges");
     } catch (error) {
       toast(error?.response?.data?.message || "Something went wrong");
     }
@@ -60,6 +69,7 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

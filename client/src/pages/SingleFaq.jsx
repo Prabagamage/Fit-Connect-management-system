@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import TopNav from '../components/TopNav';
 import { useNavigate, useParams } from 'react-router-dom';
 import AuthAxios from '../utils/AuthAxios';
+import BackButton from './common/BackButton';
+import toast from 'react-simple-toasts';
 
 const SingleFaq = () => {
     const navigate = useNavigate();
@@ -26,7 +28,7 @@ const SingleFaq = () => {
         try {
             const rep = await AuthAxios.delete(`/discussion/${q._id}`);
             console.log(rep);
-            alert("Question Deleted Successfully");
+            toast("Question Deleted Successfully");
             navigate("/myfaq");
         } catch (error) {
             console.log(error);
@@ -40,13 +42,13 @@ const SingleFaq = () => {
                 return;
             }
             const rep = await AuthAxios.patch(`/discussion/${q._id}`, {
-                title: q.title,
-                description: q.description
+                title: q?.title,
+                description: q?.description
             });
             console.log(rep);
             setIsEditing(false);
             setRefresh(!refresh);
-            alert("Question Updated Successfully");
+            toast("Question Updated Successfully");
         } catch (error) {
             console.log(error);
             setIsEditing(false);
@@ -72,13 +74,14 @@ const SingleFaq = () => {
             <TopNav />
 
             <div className="max-w-4xl mx-auto p-6">
-                <button className="text-2xl font-bold bg-gray-100 text-black px-6 py-3  mt-6 w-full md:w-auto text-center font-semibold">View Question</button>
+                <BackButton className={'mr-5'}/>
+                <button className="bg-gray-500 text-white px-6 py-3 rounded-2xl mt-6 w-full md:w-auto text-center font-semibold">View Question</button>
 
                 <div className="w-full md:w-3/4 mx-auto px-4 py-8 bg-white shadow-lg rounded-lg mt-10">
                     <h5 className="text-lg font-semibold mb-4">Submitted Question:</h5>
-                    <input disabled={!isEditing} name='title' className='text-xl bg-gray-200 p-3 font-semibold w-full rounded-lg' onChange={handleChange} value={q.title}></input>
+                    <input disabled={!isEditing} name='title' className='text-xl bg-gray-200 p-3 font-semibold w-full rounded-lg' onChange={handleChange} value={q?.title}></input>
                     <h5 className='text-lg font-semibold mt-5'>Answer:</h5>
-                    <input disabled={isAnswer ? false : !isEditing} name='description' className='text-lg font-semibold mt-3 bg-gray-200 p-3 w-full rounded-lg' onChange={handleChange} value={q.description}></input>
+                    <input disabled={isAnswer ? false : !isEditing} name='description' className='text-lg font-semibold mt-3 bg-gray-200 p-3 w-full rounded-lg' onChange={handleChange} value={q?.description}></input>
                 </div>
 
                 <div className="flex justify-center gap-4 mt-10">

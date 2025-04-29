@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AuthAxios from '../../utils/AuthAxios';
 import { useNavigate, useParams } from 'react-router-dom';
+import toast from 'react-simple-toasts';
+import TopNav from '../../components/TopNav';
+import Footer from '../../components/Footer';
 
 const ViewChallenge = () => {
     const { id } = useParams();
@@ -62,7 +65,7 @@ const ViewChallenge = () => {
                     setChallengeData(response.data);
                     // Initialize completed steps state
                     setCompletedSteps(new Array(response.data.workoutSteps.length).fill(false));
-                    
+
                     if (response.data.challengeImage) {
                         setImagePreviews(prevState => ({
                             ...prevState,
@@ -78,7 +81,7 @@ const ViewChallenge = () => {
                 })
                 .catch(error => {
                     console.error('Error fetching challenge data:', error);
-                    alert('Error fetching challenge data');
+                    toast('Error fetching challenge data');
                 });
         }
     }, [id]);
@@ -250,20 +253,24 @@ const ViewChallenge = () => {
                 </p>
                 <img src='https://png.pngtree.com/png-vector/20221215/ourmid/pngtree-green-check-mark-png-image_6525691.png' />
                 <button
-                onClick={()=>{navigate('/challenges')}} className='text-2xl font-bold text-white py-5 px-10 rounded-2xl bg-black'>Ok</button>
+                    onClick={() => { navigate('/challenges') }} className='text-2xl font-bold text-white py-5 px-10 rounded-2xl bg-black'>Ok</button>
             </div>
         </div>
     );
 
     return (
-        <div className='flex flex-col items-center gap-5 py-10'>
-            <h1 className="text-2xl font-bold">{challengeData.challengeName}</h1>
-            {step === 1 && renderStep1()}
-            {step === 2 && renderStep2()}
-            {step === 3 && renderStep3()}
-            {step === 4 && renderStep4()}
-            {step === 5 && renderStep5()}
-        </div>
+        <>
+            <TopNav />
+            <div className='flex flex-col items-center gap-5 py-10 lg:mb-14'>
+                <h1 className="text-2xl font-bold">{challengeData.challengeName}</h1>
+                {step === 1 && renderStep1()}
+                {step === 2 && renderStep2()}
+                {step === 3 && renderStep3()}
+                {step === 4 && renderStep4()}
+                {step === 5 && renderStep5()}
+            </div>
+            <Footer />
+        </>
     );
 };
 

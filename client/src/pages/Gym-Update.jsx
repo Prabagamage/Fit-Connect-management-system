@@ -137,7 +137,7 @@ const GymUpdate = () => {
           <div className="space-y-3 flex flex-col">
             <label htmlFor="gymName" className="flex justify-between">
               Gym Name
-              
+              <span className="text-xs text-gray-500 font-semibold mt-1">(Only letters/numbers allowed)</span>
             </label>
             <input
               className="bg-gray-300 p-2 rounded-xl"
@@ -148,7 +148,7 @@ const GymUpdate = () => {
 
             <label htmlFor="location" className="flex justify-between">
               Location
-              
+              <span className="text-xs text-gray-500 font-semibold mt-1">Required</span>
             </label>
             <input
               className="bg-gray-300 p-2 rounded-xl"
@@ -159,7 +159,7 @@ const GymUpdate = () => {
 
             <label htmlFor="phone" className="flex justify-between">
               Phone Number
-     
+              <span className="text-xs text-gray-500 font-semibold mt-1">(Valid phone number format)</span>
             </label>
             <input
               className="bg-gray-300 p-2 rounded-xl"
@@ -170,7 +170,7 @@ const GymUpdate = () => {
 
             <label htmlFor="email" className="flex justify-between">
               Email
-              
+              <span className="text-xs text-gray-500 font-semibold mt-1">(Must follow email format)</span>
             </label>
             <input
               className="bg-gray-300 p-2 rounded-xl"
@@ -181,7 +181,7 @@ const GymUpdate = () => {
 
             <label htmlFor="fees" className="flex justify-between">
               Membership Fees
-              
+              <span className="text-xs text-gray-500 font-semibold mt-1">Required</span>
             </label>
             <input
               className="bg-gray-300 p-2 rounded-xl"
