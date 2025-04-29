@@ -103,13 +103,13 @@ const GymList = () => {
                     <td className="py-3 px-6 text-center">{renderStars(gym.ratings)}</td>
                     <td className="py-3 px-6 text-center">
                       <div className="flex justify-center space-x-3">
-                        <button onClick={() => navigate(`/gym-view/${gym._id}`)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => navigate(`/gym-view/${gym._id}`)} className="text-blue-700 hover:text-gray-700 cursor-pointer">
                           <FaEye size={20} />
                         </button>
-                        <button onClick={() => navigate(`/gym-update/${gym._id}`)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => navigate(`/gym-update/${gym._id}`)} className="text-green-600 hover:text-gray-700 cursor-pointer">
                           <FaPen size={20} />
                         </button>
-                        <button onClick={() => handleDelete(gym._id)} className="text-black hover:text-gray-700 cursor-pointer">
+                        <button onClick={() => handleDelete(gym._id)} className="text-red-700 hover:text-gray-700 cursor-pointer">
                           <FaTrash size={20} />
                         </button>
                       </div>
