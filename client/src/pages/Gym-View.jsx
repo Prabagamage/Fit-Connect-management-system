@@ -125,6 +125,7 @@ const GymView = () => {
                   <li key={index} className="p-3 border rounded-lg shadow-xl">
 
                    <p className="font-bold text-blue-900">{review.user}</p>
+                   
                     <p className="text-gray-600">{review.comment}</p>
                   </li>
                 ))}
