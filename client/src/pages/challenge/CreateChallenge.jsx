@@ -158,7 +158,7 @@ const CreateChallenge = () => {
 
     const renderStep1 = () => (
         <div>
-            <div className="flex flex-col  gap-4 space-y-2 w-[600px]">
+            <div className="flex flex-col  gap-1 space-y-2 w-[700px]">
                 <input
                     type="text"
                     name="gymName"
@@ -219,7 +219,7 @@ const CreateChallenge = () => {
                     placeholder="Challenge Explanation"
                     className="w-full bg-gray-200 px-4 py-3 rounded-2xl mt-5"
                     required
-                    rows={10}
+                    rows={5}
                 />
                 <button
                     type="button"
@@ -308,7 +308,7 @@ const CreateChallenge = () => {
                         <button
                             type="button"
                             onClick={addWorkoutStep}
-                            className="bg-gray-300 text-white px-4 py-2 rounded-3xl mt-2 cursor-pointer"
+                            className="bg-gray-300 text-Black-200 px-4 py-2 rounded-3xl mt-2 cursor-pointer"
                         >
                             + Add More
                         </button>
