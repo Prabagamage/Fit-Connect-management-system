@@ -364,7 +364,7 @@ const CreateChallenge = () => {
             <div className="max-w-max mx-auto p-10 bg-white flex flex-col gap-5">
                 <div>
                     <p className='text-3xl font-bold text-center'> ADD CHALLENGE</p>
-                    <div className='p-10 rounded-2xl bg-gray-500 mt-5 w-max'>
+                    <div className='p-10 rounded-2xl bg-blue-300 mt-5 w-max'>
                         <form>
                             {step === 1 && renderStep1()}
                             {step === 2 && renderStep2()}
