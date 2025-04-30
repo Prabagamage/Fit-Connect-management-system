@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import AuthAxios from '../utils/AuthAxios'
 import { useNavigate } from 'react-router-dom'
 
+//author: Tilini
+
+
 const AskFaQ = () => {
     const navigate = useNavigate()
     const [faq, setFaq] = useState({
