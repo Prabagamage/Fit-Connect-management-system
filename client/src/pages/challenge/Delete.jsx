@@ -39,7 +39,7 @@ export default function DeleteChallenge() {
                     <div className='flex justify-between w-[300px]'>
                         <button
                             type="button"
-                            className="bg-green-500 text-white py-3 px-6 rounded-lg cursor-pointer"
+                            className="bg-green-400 text-white py-3 px-6 rounded-lg cursor-pointer"
                             onClick={() => navigate('/challenges')}  // Navigate back without deleting
                         >
                             No
