@@ -4,6 +4,9 @@ import imageB from '../assets/image 84.png';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 
+//author: Tilini
+
+//navigation of the FAQ
 const Faq = () => {
     const navigate = useNavigate();
 

@@ -5,6 +5,9 @@ import AuthAxios from '../utils/AuthAxios';
 import BackButton from './common/BackButton';
 import toast from 'react-simple-toasts';
 
+//author: Tilini
+
+//Single questions
 const SingleFaq = () => {
     const navigate = useNavigate();
     const params = useParams();

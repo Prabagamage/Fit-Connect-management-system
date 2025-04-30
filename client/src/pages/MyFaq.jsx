@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import BackButton from './common/BackButton';
 import Footer from '../components/Footer';
 
+//author: Tilini
+
+// sampleQ questions
 const sampleQ = [
     {
         title: "What are your gym’s operating hours?",

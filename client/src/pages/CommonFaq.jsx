@@ -5,6 +5,9 @@ import AuthAxios from '../utils/AuthAxios';
 import BackButton from './common/BackButton';
 import Footer from '../components/Footer';
 
+//author: Tilini
+
+//common Faq Questions
 const sampleQ = [
     {
         title: "What are your gym’s operating hours?",

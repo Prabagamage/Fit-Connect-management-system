@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import BackButton from './common/BackButton'
 import toast from 'react-simple-toasts'
 
+//author: Tilini
+
+
 const AskFaQ = () => {
     const navigate = useNavigate()
     const [faq, setFaq] = useState({
