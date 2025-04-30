@@ -4,6 +4,9 @@ import myQimage from '../assets/my.png';
 import AuthAxios from '../utils/AuthAxios';
 import { useNavigate } from 'react-router-dom';
 
+//author: Tilini
+
+// sampleQ questions
 const sampleQ = [
     {
         title: "What are your gym’s operating hours?",

@@ -3,6 +3,9 @@ import TopNav from '../components/TopNav';
 import { useNavigate, useParams } from 'react-router-dom';
 import AuthAxios from '../utils/AuthAxios';
 
+//author: Tilini
+
+//Single questions
 const SingleFaq = () => {
     const navigate = useNavigate();
     const params = useParams();

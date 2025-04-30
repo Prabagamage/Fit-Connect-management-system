@@ -3,6 +3,9 @@ import TopNav from '../components/TopNav';
 import { useNavigate } from 'react-router-dom';
 import AuthAxios from '../utils/AuthAxios';
 
+//author: Tilini
+
+//common Faq Questions
 const sampleQ = [
     {
         title: "What are your gym’s operating hours?",
