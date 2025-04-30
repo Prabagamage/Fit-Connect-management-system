@@ -3,11 +3,13 @@ import AuthAxios from "../utils/AuthAxios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-simple-toasts";
 import TopNav from "../components/TopNav";
+import Footer from "../components/Footer";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("user");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -17,10 +19,11 @@ const Register = () => {
         name,
         email,
         password,
+        role,
       });
 
       toast("Registration successful!");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       toast(error?.response?.data?.message || "Something went wrong");
     }
@@ -57,18 +60,25 @@ const Register = () => {
               required
               className="border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
+            <select name="role" value={role} onChange={(e) => setRole(e.target.value)} className="border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" id="">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+              <option value="trainer">Trainer</option>
+            </select>
             <button type="submit" className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg">
               Register
             </button>
+
           </form>
           <p className="mt-4 text-center text-sm text-gray-600">
             Already have an account?{" "}
-            <span className="text-blue-500 cursor-pointer" onClick={() => navigate("/login")}>
+            <span className="text-blue-500 cursor-pointer" onClick={() => navigate("/")}>
               Login
             </span>
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

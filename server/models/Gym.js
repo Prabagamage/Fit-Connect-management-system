@@ -10,6 +10,7 @@ const gymSchema = mongoose.Schema(
     fees: { type: Number, required: true },
     ratings: { type: Number, default: 0 },
     images: { type: [String] },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "Review" }],
   },
   { timestamps: true }

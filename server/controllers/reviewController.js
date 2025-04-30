@@ -1,11 +1,20 @@
 import Review from "../models/Review.js";
 import Gym from "../models/Gym.js";
+import UserModel from "../models/User.js";
 
 // Add Review
 export const addReview = async (req, res) => {
   try {
-    const { user, rating, comment, gymId } = req.body;
-    const review = new Review({ user, rating, comment, gym: gymId });
+    const { rating, comment, gymId } = req.body;
+
+    if (!req.user || !req.user.id) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+    const userDoc = await UserModel.findById(req.user.id);
+    if (!userDoc) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const review = new Review({ userId: req.user.id, user: userDoc.name, rating, comment, gym: gymId });
     await review.save();
 
     const gyms = await Gym.findById(gymId).populate('reviews');
@@ -60,6 +69,7 @@ export const deleteReview = async (req, res) => {
 export const updateReview = async (req, res) => {
   try {
     const { rating, comment } = req.body;
+    console.log(req.body)
     const { id } = req.params;
 
     // Find the review by ID
@@ -74,15 +84,12 @@ export const updateReview = async (req, res) => {
     await review.save();
 
     // Update Gym Rating (Recalculate the average rating)
-     // Recalculate average rating correctly
-    const allReviewIds = [...gym.reviews, review._id];
-    const allReviews = await Review.find({ _id: { $in: allReviewIds } });
-    const totalRating = allReviews.reduce((sum, r) => sum + r.rating, 0);
-    gym.ratings = totalRating / allReviews.length;
+
 
     await gym.save();
     res.status(200).json(review);
   } catch (error) {
+    console.error("Error updating review:", error);
     res.status(500).json({ message: error.message });
   }
 };

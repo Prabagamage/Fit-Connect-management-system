@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import TopNav from '../components/TopNav';
 import AuthAxios, { BASE_URL } from '../utils/AuthAxios';
+import Footer from '../components/Footer';
 
 const GymView = () => {
   const { id } = useParams();
@@ -134,6 +135,7 @@ const GymView = () => {
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
