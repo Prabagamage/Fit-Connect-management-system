@@ -122,8 +122,9 @@ const GymView = () => {
               <h3 className="text-2xl font-semibold mb-2">Reviews:</h3>
               <ul className="space-y-2">
                 {gym.reviews.map((review, index) => (
-                  <li key={index} className="p-3 border rounded-lg shadow-sm">
-                    <p className="font-semibold">{review.user}</p>
+                  <li key={index} className="p-3 border rounded-lg shadow-xl">
+
+                   <p className="font-bold text-blue-900">{review.user}</p>
                     <p className="text-gray-600">{review.comment}</p>
                   </li>
                 ))}
