@@ -158,7 +158,7 @@ const CreateChallenge = () => {
 
     const renderStep1 = () => (
         <div>
-            <div className="flex flex-col gap-8 space-y-2 w-[600px]">
+            <div className="flex flex-col  gap-4 space-y-2 w-[600px]">
                 <input
                     type="text"
                     name="gymName"
