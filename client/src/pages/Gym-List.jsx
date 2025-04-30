@@ -58,17 +58,26 @@ const GymList = () => {
   return (
     <>
       <TopNav />
-      <div className='flex flex-row w-full h-screen'>
+      <div className="fixed inset-0 bg-gray-500 -z-10"></div> {/* Fixed gray background */}
+<div className="flex flex-row w-full min-h-screen relative z-10"> {/* Scrollable content */}
       {/* Left Sidebar (Fixed) */}
-      <div className='flex flex-col w-1/5 h-full'>
+      <div className='flex flex-col w-1/5 h-[110vh]'>
                 <div className='w-full bg-gray-300 p-10'>
                     <p className='text-3xl font-bold'>Gym List</p>
                 </div>
                 <div className='w-full bg-gray-400 p-10 space-y-4 flex-1'>
-                    <p className='text-2xl font-bold p-4 bg-gray-200 hover:bg-gray-300 cursor-pointer'
-                    onClick={() => navigate('/gym-list')}>Gym List</p>
-                    <p className='text-2xl font-bold p-4 bg-gray-200 hover:bg-gray-300 cursor-pointer'
-                    onClick={() => navigate('/review-add')}>Reviews</p>
+                <p
+  className="text-xl font-semibold px-6 py-3 bg-gray-200 hover:bg-gray-300 hover:text-black rounded-lg shadow-sm transition cursor-pointer"
+  onClick={() => navigate('/gym-list')}
+>
+  🏋️‍♀️ Gym List
+</p>
+<p
+  className="text-xl font-semibold px-6 py-3 bg-gray-200 hover:bg-gray-300 hover:text-black rounded-lg shadow-sm transition cursor-pointer"
+  onClick={() => navigate('/review-add')}
+>
+  💬 Reviews
+</p>
                 </div>
             </div>
             <div className="container mx-auto p-4">
@@ -83,7 +92,9 @@ const GymList = () => {
       <input
         type="text"
         placeholder="Search gyms..."
-        className="w-full pl-4 pr-10 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+         className="w-full pl-4 pr-10 py-2 border border-black bg-gray-300 text-black rounded-md 
+             focus:outline-none focus:ring-2 focus:ring-gray-700 
+             hover:border-gray-800 transition"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
@@ -92,12 +103,12 @@ const GymList = () => {
   </div>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-            <thead className="bg-gray-400 text-black">
+            <thead className="bg-gray-300 text-black">
               <tr>
-                <th className="py-3 px-6 text-left">Gym Name</th>
-                <th className="py-3 px-6 text-left">Location</th>
-                <th className="py-3 px-6 text-center">Ratings</th>
-                <th className="py-3 px-6 text-center">Actions</th>
+                <th className="py-3 px-6 text-left  text-xl">Gym Name</th>
+                <th className="py-3 px-6 text-left  text-xl">Location</th>
+                <th className="py-3 px-6 text-center  text-xl">Ratings</th>
+                <th className="py-3 px-6 text-center  text-xl">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -131,8 +142,20 @@ const GymList = () => {
           </table>
         </div>
         <div className="flex flex-col items-center mt-4 space-y-2">
-          <button onClick={() => navigate('/gym-add-new')} className="bg-green-600 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Add New Gym</button>
-          <button onClick={generatePDF} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-gray-600 cursor-pointer">Generate Gym List Report</button>
+        <button
+  onClick={() => navigate('/gym-add-new')}
+  className="bg-green-600 text-white text-lg font-semibold px-4 py-2 w-60 rounded-lg hover:bg-green-700 transition cursor-pointer"
+>
+  Add New Gym
+</button>
+
+<button
+  onClick={generatePDF}
+  className="bg-blue-600 text-white text-lg font-semibold px-4 py-2 w-90 rounded-lg hover:bg-blue-700 transition cursor-pointer"
+>
+  Generate Gym List Report
+</button>
+
         </div>
       </div>
       </div>
