@@ -17,6 +17,10 @@ export const addReview = async (req, res) => {
     const review = new Review({ userId: req.user.id, user: userDoc.name, rating, comment, gym: gymId });
     await review.save();
 
+    const gyms = await Gym.findById(gymId).populate('reviews');
+
+    gym.reviews.push(review._id);
+
     // Update Gym Rating
     const gym = await Gym.findById(gymId);
     gym.reviews.push(review._id);
@@ -80,17 +84,9 @@ export const updateReview = async (req, res) => {
     await review.save();
 
     // Update Gym Rating (Recalculate the average rating)
-    const gym = await Gym.findById(review.gym);
-    const updatedRating = gym?.reviews?.length > 1
-      ? gym.reviews.reduce((acc, reviewId) => {
-        const review = gym.reviews.find((r) => r._id.toString() === reviewId.toString());
-        return acc + review.rating;
-      }, 0) / gym?.reviews?.length || 0
-      : rating;
-      console.log(updatedRating)
-    gym.ratings = updatedRating;
-    await gym.save();
 
+
+    await gym.save();
     res.status(200).json(review);
   } catch (error) {
     console.error("Error updating review:", error);

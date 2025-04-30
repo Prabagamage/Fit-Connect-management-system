@@ -57,16 +57,15 @@ const GymList = () => {
 
   return (
     <>
-      <TopNav />
-      <div className="fixed inset-0 bg-gray-500 -z-10"></div> {/* Fixed gray background */}
-<div className="flex flex-row w-full min-h-screen relative z-10"> {/* Scrollable content */}
-      {/* Left Sidebar (Fixed) */}
-      <div className='flex flex-col w-1/5 h-[110vh]'>
-                <div className='w-full bg-gray-300 p-10'>
-                    <p className='text-3xl font-bold'>Gym List</p>
-                </div>
-                <div className='w-full bg-gray-400 p-10 space-y-4 flex-1'>
-                <p
+     <TopNav />
+      <div className='flex flex-row w-full h-screen bg-gray-300 overflow-auto'>
+        {/* Left Sidebar (Fixed) */}
+        <div className='flex flex-col w-1/5 h-full'>
+          <div className='w-full bg-gray-500 p-10'>
+            <p className='text-3xl font-bold'>Gym List</p>
+          </div>
+          <div className='w-full bg-gray-400 p-10 space-y-4 flex-1'>
+          <p
   className="text-xl font-semibold px-6 py-3 bg-gray-200 hover:bg-gray-300 hover:text-black rounded-lg shadow-sm transition cursor-pointer"
   onClick={() => navigate('/gym-list')}
 >
@@ -92,7 +91,7 @@ const GymList = () => {
       <input
         type="text"
         placeholder="Search gyms..."
-         className="w-full pl-4 pr-10 py-2 border border-black bg-gray-300 text-black rounded-md 
+         className="w-full pl-5 pr-10 py-2 border border-black-500 bg-gray-300 text-black rounded-md 
              focus:outline-none focus:ring-2 focus:ring-gray-700 
              hover:border-gray-800 transition"
         value={searchTerm}
@@ -103,7 +102,7 @@ const GymList = () => {
   </div>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-            <thead className="bg-gray-300 text-black">
+            <thead className="bg-gray-400 text-black">
               <tr>
                 <th className="py-3 px-6 text-left  text-xl">Gym Name</th>
                 <th className="py-3 px-6 text-left  text-xl">Location</th>

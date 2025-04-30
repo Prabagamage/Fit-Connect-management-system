@@ -119,17 +119,27 @@ const GymUpdate = () => {
   return (
     <>
       <TopNav />
-      <div className='flex flex-row w-full h-screen'>
-        {/* Left Sidebar (Fixed) */}
-        <div className='flex flex-col w-1/5 h-full'>
-          <div className='w-full bg-gray-300 p-10'>
-            <p className='text-3xl font-bold'>Edit Gym Details</p>
+      <div className="flex flex-row w-full h-screen bg-gray-300 overflow-auto">
+        {/* Left Sidebar */}
+        <div className="flex flex-col w-1/5 h-full">
+          <div className="w-full bg-gray-500 p-10">
+            <p className="text-3xl font-bold text-black">Gym List</p>
           </div>
-          <div className='w-full bg-gray-400 p-10 space-y-4 flex-1'>
-            <p className='text-2xl font-bold p-4 bg-gray-200 hover:bg-gray-300 cursor-pointer'
-              onClick={() => navigate('/gym-list')}>Gym List</p>
-            <p className='text-2xl font-bold p-4 bg-gray-200 hover:bg-gray-300 cursor-pointer'
-              onClick={() => navigate('/review-add')}>Reviews</p>
+
+          <div className="w-full bg-gray-400 p-10 space-y-4 flex-1">
+            <p
+              className="text-xl font-semibold px-6 py-3 bg-gray-200 hover:bg-gray-300 hover:text-black rounded-lg shadow-sm transition cursor-pointer"
+              onClick={() => navigate('/gym-list')}
+            >
+              🏋️‍♀️ Gym List
+            </p>
+
+            <p
+              className="text-xl font-semibold px-6 py-3 bg-gray-200 hover:bg-gray-300 hover:text-black rounded-lg shadow-sm transition cursor-pointer"
+              onClick={() => navigate('/review-add')}
+            >
+              💬 Reviews
+            </p>
           </div>
         </div>
         <div className="max-w-2xl mx-auto bg-gradient-to-b from-gray-400 to-gray-50 p-6 rounded-xl shadow-md mt-10">
