@@ -164,7 +164,7 @@ export default function GymAddNew() {
               className="bg-gray-200 p-2 text-black cursor-pointer hover:bg-gray-300 transition duration-200"> Cancel </button>
             <button
               onClick={handleSubmit}
-              className="bg-gray-500 p-2 text-white cursor-pointer hover:bg-gray-600 transition duration-200"> Save </button>
+              className="bg-gray-500 p-2 text-white cursor-pointer hover:bg-Green-500 transition duration-200"> Save </button>
           </div>
         </div>
       </div>
