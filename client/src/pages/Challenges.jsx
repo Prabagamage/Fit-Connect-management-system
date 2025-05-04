@@ -46,7 +46,7 @@ export default function Challenges() {
                     <p className='text-2xl font-bold'>Challenge Listing</p>
                 </div>
                 <div className='w-full flex lg:flex-col flex-row bg-gray-500 p-10 space-y-4 flex-1'>
-                    <p className='text-2xl font-bold p-4 bg-white cursor-pointer' onClick={() => navigate('/gym-list')}>Gym List</p>
+                    <p className='text-xl font-bold p-2 bg-white cursor-pointer' onClick={() => navigate('/gym-list')}>Gym List</p>
                     <p 
                         className='text-2xl font-bold p-4 bg-white cursor-pointer'
                         onClick={() => navigate('/create-challenge')}
@@ -85,12 +85,12 @@ export default function Challenges() {
                 </div>
 
                 {/* Scrollable Challenge List */}
-                <div className='grid md:grid-cols-1 xl:grid-cols-2 gap-5 p-10 h-full overflow-scroll'>
+                <div className='grid md:grid-cols-1 xl:grid-cols-2 gap-5 bg-white p-10 h-full overflow-scroll'>
                     {filteredChallenges.map((challenge, index) => (
                         <div
                             key={index}
                             onClick={() => handleChallengeClick(challenge._id)}
-                            className='relative w-[520px] cursor-pointer hover:border-black border border-white h-max bg-cover bg-center rounded-lg p-5 gap-5 flex items-center flex-col text-white shadow-lg'
+                            className='relative w-[520px] cursor-pointer hover:border-black border border-white bg-gray-200 h-max bg-cover bg-center rounded-lg p-5 gap-5 flex items-center flex-col text-white shadow-lg'
                         >
                             <img
                                 className='w-full h-70 object-cover rounded-lg'

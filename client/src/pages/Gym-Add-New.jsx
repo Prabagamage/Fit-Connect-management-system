@@ -104,42 +104,42 @@ export default function GymAddNew() {
               onClick={() => navigate('/review-add')}>Reviews</p>
           </div>
         </div>
-        <div className="max-w-2xl mx-auto bg-gradient-to-b from-gray-400 to-gray-50 p-6 rounded-xl shadow-md mt-10">
+        <div className="max-w-2xl mx-auto bg-gradient-to-b from-blue-300 to-blue-50 p-6 rounded-xl shadow-md mt-10">
           <h2 className="text-xl font-bold text-gray-600 mb-4">GYM Details</h2>
           <div className="space-y-3 flex flex-col">
             <label htmlFor="gymName" className="flex justify-between">
               Gym Name
               <span className="text-xs text-gray-500 font-semibold mt-1">(Only letters/ numbers allowed)</span>
             </label>
-            <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="gymName" value={formData.gymName} />
+            <input className='bg-gray-100 p-2 rounded-xl' onChange={handleValueChange} name="gymName" value={formData.gymName} />
             
             <label htmlFor="location" className="flex justify-between">
               Location
               <span className="text-xs text-gray-500 font-semibold mt-1">Required</span>
             </label>
-            <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="location" value={formData.location} />
+            <input className='bg-gray-100 p-2 rounded-xl' onChange={handleValueChange} name="location" value={formData.location} />
             
             <label htmlFor="phone" className="flex justify-between">
               Phone Number
               <span className="text-xs text-gray-500 font-semibold mt-1">(Valid phone number format)</span>
             </label>
-            <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="phone" value={formData.phone} />
+            <input className='bg-gray-100 p-2 rounded-xl' onChange={handleValueChange} name="phone" value={formData.phone} />
             
             <label htmlFor="email" className="flex justify-between">
               Email
               <span className="text-xs text-gray-500 font-semibold mt-1">(Must follow email format)</span>
             </label>
-            <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="email" value={formData.email} />
+            <input className='bg-gray-100 p-2 rounded-xl' onChange={handleValueChange} name="email" value={formData.email} />
             
             <label htmlFor="fees" className="flex justify-between">
               Membership Fees
               <span className="text-xs text-gray-500 font-semibold mt-1">Required</span>
             </label>
-            <input className='bg-gray-300 p-2 rounded-xl' onChange={handleValueChange} name="fees" value={formData.fees} />
+            <input className='bg-gray-100 p-2 rounded-xl' onChange={handleValueChange} name="fees" value={formData.fees} />
           </div>
 
           <h3 className="mt-4 font-medium">Facilities & Services</h3>
-          <div className="bg-gray-300 p-3 rounded-lg mt-2">
+          <div className="bg-gray-100 p-3 rounded-lg mt-2">
             {Object.entries(formData.services).map(([key, value]) => (
               <div key={key} className="flex items-center space-x-2">
                 <input type="checkbox" checked={value} onChange={() => handleCheckboxChange(key)} />

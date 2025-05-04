@@ -37,7 +37,7 @@ const Login = () => {
   return (
     <>
       <TopNav />
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="flex justify-center items-center min-h-screen bg-gray-300">
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login</h2>
           <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
