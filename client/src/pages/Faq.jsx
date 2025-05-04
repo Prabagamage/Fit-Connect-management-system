@@ -3,6 +3,9 @@ import TopNav from '../components/TopNav';
 import imageB from '../assets/image 84.png';
 import { useNavigate } from 'react-router-dom';
 
+//author: Tilini
+
+//navigation of the FAQ
 const Faq = () => {
     const navigate = useNavigate();
   
