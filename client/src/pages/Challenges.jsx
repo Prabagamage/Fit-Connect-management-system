@@ -38,37 +38,38 @@ export default function Challenges() {
 
     return (
         <>
-        <TopNav/>
-        <div className='flex lg:flex-row flex-col w-full h-screen'>
-            {/* Left Sidebar (Fixed) */}
-            <div className='flex flex-row lg:flex-col w-full lg:w-1/5 lg:h-full'>
-                <div className='w-full bg-gray-300 p-10'>
-                    <p className='text-2xl font-bold'>Challenge Listing</p>
-                </div>
-                <div className='w-full flex lg:flex-col flex-row bg-gray-500 p-10 space-y-4 flex-1'>
-                    <p className='text-xl font-bold p-2 bg-white cursor-pointer' onClick={() => navigate('/gym-list')}>Gym List</p>
-                    <p 
-                        className='text-2xl font-bold p-4 bg-white cursor-pointer'
-                        onClick={() => navigate('/create-challenge')}
-                    >
-                        Create Challenge
-                    </p>
-                    <p 
-                        className='text-2xl font-bold p-4 bg-white cursor-pointer'
-                        onClick={() => navigate('/edit-challenges')}
-                    >
-                        Edit Challenge
-                    </p>
-                    <p 
-                        className='text-2xl font-bold p-4 bg-white cursor-pointer'
-                        onClick={() => navigate('/challenges')}
-                    >
-                        Challenge Category
-                    </p>
-                    <p onClick={() => navigate('/review-add')} className='text-2xl cursor-pointer font-bold p-4 bg-white'>Reviews</p>
-                </div>
-            </div>
-
+        <TopNav />
+      <div className="flex h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        {/* Left Sidebar */}
+        <div className="w-1/5 bg-gradient-to-b from-gray-800 to-gray-900 text-white p-6">
+          <h2 className="text-3xl font-bold mb-8 text-center text-teal-200">Gym Hub</h2>
+          <nav className="space-y-4">
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/gym-list')}
+            >
+              🏋️‍♂️ Gym List
+            </button>
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/create-challenge')}
+            >
+              🏋️‍♂️ Create Challenge
+            </button>
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/edit-challenges')}
+            >
+              🏋️‍♂️ Edit Challenge
+            </button>
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/admin-reviews')}
+            >
+              💬 Reviews
+            </button>
+          </nav>
+        </div>
             {/* Rest of the component remains the same */}
             {/* Right Content (Scrollable) */}
             <div className='flex flex-col w-full h-full overflow-hidden'>

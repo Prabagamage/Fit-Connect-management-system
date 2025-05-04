@@ -165,7 +165,7 @@ const CreateChallenge = () => {
                     value={challengeData.gymName}
                     onChange={handleInputChange}
                     placeholder="Gym Name"
-                    className="w-full bg-gray-200 px-4 py-3 rounded-2xl mt-5"
+                    className="w-full bg-gray-100 px-4 py-3 rounded-2xl mt-5"
                     required
                 />
                 <input
@@ -174,7 +174,7 @@ const CreateChallenge = () => {
                     value={challengeData.challengeName}
                     onChange={handleInputChange}
                     placeholder="Challenge Name"
-                    className="w-full bg-gray-200 px-4 py-3 rounded-2xl mt-5"
+                    className="w-full bg-gray-100 px-4 py-3 rounded-2xl mt-5"
                     required
                 />
                 <input
@@ -183,7 +183,7 @@ const CreateChallenge = () => {
                     value={challengeData.challengeCategory}
                     onChange={handleInputChange}
                     placeholder="Challenge Category (e.g., Cardio, Strength)"
-                    className="w-full bg-gray-200 px-4 py-3 rounded-2xl mt-5"
+                    className="w-full bg-gray-100 px-4 py-3 rounded-2xl mt-5"
                     required
                 />
                 <input
@@ -192,7 +192,7 @@ const CreateChallenge = () => {
                     value={challengeData.challengeTimePeriod}
                     onChange={handleInputChange}
                     placeholder="Challenge Time Period"
-                    className="w-full bg-gray-200 px-4 py-3 rounded-2xl mt-5"
+                    className="w-full bg-gray-100 px-4 py-3 rounded-2xl mt-5"
                     required
                 />
                 <input
@@ -201,7 +201,7 @@ const CreateChallenge = () => {
                     value={challengeData.focusBodyParts}
                     onChange={handleInputChange}
                     placeholder="Focus Body Parts"
-                    className="w-full bg-gray-200 px-4 py-3 rounded-2xl mt-5"
+                    className="w-full bg-gray-100 px-4 py-3 rounded-2xl mt-5"
                     required
                 />
                 <textarea
@@ -209,7 +209,7 @@ const CreateChallenge = () => {
                     value={challengeData.fitnessBenefits}
                     onChange={handleInputChange}
                     placeholder="Fitness Benefits"
-                    className="w-full bg-gray-200 px-4 py-3 rounded-2xl mt-5"
+                    className="w-full bg-gray-100 px-4 py-3 rounded-2xl mt-5"
                     required
                 />
                 <textarea
@@ -217,9 +217,9 @@ const CreateChallenge = () => {
                     value={challengeData.explanation}
                     onChange={handleInputChange}
                     placeholder="Challenge Explanation"
-                    className="w-full bg-gray-200 px-4 py-3 rounded-2xl mt-5"
+                    className="w-full bg-gray-100 px-4 py-3 rounded-2xl mt-5"
                     required
-                    rows={5}
+                    rows={3}
                 />
                 <button
                     type="button"
@@ -347,7 +347,7 @@ const CreateChallenge = () => {
                     </button>
                     <button
                         type="submit"
-                        className="bg-[#615F77] text-white py-3 px-6 rounded-lg cursor-pointer"
+                        className="bg-blue-600 text-white py-3 px-6 rounded-lg cursor-pointer"
                         onClick={handleSubmit}
                     >
                         Create Challenge
