@@ -46,7 +46,7 @@ const MyFaq = () => {
 
                 <img src={myQimage} alt="Submitted Questions" className="mt-10 w-full rounded-lg shadow-md" />
 
-                <div className="text-center w-full md:w-3/4 mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+                <div className="text-center w-full md:w-3/4 mx-auto p-6 bg-blue-300 shadow-lg rounded-lg mt-10">
                     <h2 className="text-2xl font-bold mb-6">Submitted Questions</h2>
 
                     {myq.length > 0 ? (
