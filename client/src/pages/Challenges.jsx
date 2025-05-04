@@ -44,12 +44,7 @@ export default function Challenges() {
         <div className="w-1/5 bg-gradient-to-b from-gray-800 to-gray-900 text-white p-6">
           <h2 className="text-3xl font-bold mb-8 text-center text-teal-200">Gym Hub</h2>
           <nav className="space-y-4">
-            <button
-              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
-              onClick={() => navigate('/gym-list')}
-            >
-              🏋️‍♂️ Gym List
-            </button>
+            
             <button
               className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
               onClick={() => navigate('/create-challenge')}
@@ -68,13 +63,19 @@ export default function Challenges() {
             >
               💬 Reviews
             </button>
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/Faq')}
+            >
+              🏋️‍♂️Q&A
+            </button>
           </nav>
         </div>
             {/* Rest of the component remains the same */}
             {/* Right Content (Scrollable) */}
             <div className='flex flex-col w-full h-full overflow-hidden'>
                 {/* Top Header */}
-                <div className='flex justify-between items-center w-full border-b border-gray-300 p-5 bg-white'>
+                <div className='flex justify-between items-center w-full border-b border-gray-300 p-5 bg-gradient'>
                     <p className='text-2xl font-bold'>ALL CHALLENGE</p>
                     <input
                         type='text'
@@ -86,7 +87,7 @@ export default function Challenges() {
                 </div>
 
                 {/* Scrollable Challenge List */}
-                <div className='grid md:grid-cols-1 xl:grid-cols-2 gap-5 bg-white p-10 h-full overflow-scroll'>
+                <div className='grid md:grid-cols-1 xl:grid-cols-2 gap-5 bg-gradient-to-b from-gray-400 to-gray-500 p-10 h-full overflow-scroll'>
                     {filteredChallenges.map((challenge, index) => (
                         <div
                             key={index}
