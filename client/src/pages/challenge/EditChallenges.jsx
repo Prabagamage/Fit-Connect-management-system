@@ -51,41 +51,43 @@ export default function EditChallenges() {
     return (
         <>
             <TopNav />
-            <div className='flex flex-row w-full h-screen'>
-                {/* Left Sidebar (Fixed) */}
-                <div className='flex flex-col w-1/5 h-full'>
-                    <div className='w-full bg-gray-300 p-10'>
-                        <p className='text-2xl font-bold'>Challenge Listing</p>
-                    </div>
-                    <div className='w-full bg-gray-500 p-10 space-y-4 flex-1'>
-                        <p className='text-2xl font-bold p-4 bg-white'>Gym List</p>
-                        <p
-                            className='text-2xl font-bold p-4 bg-white cursor-pointer'
-                            onClick={() => navigate('/create-challenge')}
-                        >
-                            Create Challenge
-                        </p>
-                        <p
-                            className='text-2xl font-bold p-4 bg-white cursor-pointer'
-                            onClick={() => navigate('/edit-challenges')}
-                        >
-                            Edit Challenge
-                        </p>
-                        <p
-                            className='text-2xl font-bold p-4 bg-white cursor-pointer'
-                            onClick={() => navigate('/challenges')}
-                        >
-                            Challenge Category
-                        </p>
-                        <p className='text-2xl font-bold p-4 bg-white'>Reviews</p>
-                    </div>
-                </div>
-
+      <div className="flex h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        {/* Left Sidebar */}
+        <div className="w-1/5 bg-gradient-to-b from-gray-800 to-gray-900 text-white p-6">
+          <h2 className="text-3xl font-bold mb-8 text-center text-teal-200">Edit or Delete Challenge</h2>
+          <nav className="space-y-4">
+            
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/create-challenge')}
+            >
+              🏋️‍♂️ Create Challenge
+            </button>
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/edit-challenges')}
+            >
+              🏋️‍♂️ Edit Challenge
+            </button>
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/admin-reviews')}
+            >
+              💬 Reviews
+            </button>
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
+              onClick={() => navigate('/Faq')}
+            >
+              🏋️‍♂️Q&A
+            </button>
+          </nav>
+        </div>
                 {/* Rest of the component remains the same */}
                 {/* Right Content (Scrollable) */}
                 <div className='flex flex-col w-full h-full overflow-hidden'>
                     {/* Top Header */}
-                    <div className='flex justify-between items-center w-full border-b border-gray-300 p-5 bg-white'>
+                    <div className='flex justify-between items-center w-full border-b border-teal-400 p-5 bg-gray-500'>
                         <p className='text-2xl font-bold'>YOUR CHALLENGE</p>
                         <input
                             type='text'
