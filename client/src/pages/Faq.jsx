@@ -40,7 +40,7 @@ const Faq = () => {
 
                     <div className="flex justify-center mt-8">
                         <button onClick={() => navigate('/commonfaq')}
-                            className="bg-gray-500 cursor-pointer text-white px-6 py-3 rounded-xl shadow-md hover:bg-gray-600 transition duration-300">
+                            className="bg-blue-500 cursor-pointer text-white px-6 py-3 rounded-xl shadow-md hover:bg-teal-100 transition duration-300">
                             See More
                         </button>
                     </div>

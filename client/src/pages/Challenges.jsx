@@ -57,12 +57,7 @@ export default function Challenges() {
             >
               🏋️‍♂️ Edit Challenge
             </button>
-            <button
-              className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
-              onClick={() => navigate('/admin-reviews')}
-            >
-              💬 Reviews
-            </button>
+            
             <button
               className="w-full text-left px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-teal-100"
               onClick={() => navigate('/Faq')}
